@@ -34,12 +34,15 @@ Box12 = new Box(450,235,30,40);
 
 
 //level three
-Box13 = new Box(360,235,30,40);
-Box14 = new Box(390,235,30,40);
-Box15 = new Box(420,235,30,40);
+Box13 = new Box(360,195,30,40);
+Box14 = new Box(390,195,30,40);
+Box15 = new Box(420,195,30,40);
 
 //top
-Box16 = new Box(390,235,30,40);
+Box16 = new Box(390,155,30,40);
+
+fill("red")
+stand1=new Ground(300,200);
 
 }
 
@@ -54,17 +57,32 @@ image(polygon_img,polygon.position.x,polygon.position.y,40,40);
 
   ground.display();
   
+  fill("red");
   Box8.display();
   Box9.display();
   Box10.display();
   Box11.display();
   Box12.display();
+
+fill("green");
   Box13.display();
   Box14.display();
   Box15.display(); 
+
+fill("blue");
   Box16.display();
-  Box8.display();
- 
+
+}
+
+function mouseDragged(){
+  if (gameState!=="launched"){
+      Matter.Body.setPosition(polygon.body, {x: mouseX , y: mouseY});
+  //}
 }
 
 
+function mouseReleased(){
+SlingShot.fly();
+  gameState = "launched";
+ }
+}
