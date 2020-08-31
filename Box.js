@@ -2,12 +2,14 @@ class Box {
   constructor(x,y,width,height) {
     var options = {
         isStatic: false,
-        restituition:0.4
+        restituition:0.4,
+        friction:0.1
     }
     this.body = Bodies.rectangle(x,y,width,height,options);
     this.width = width;
     this.height = height;
     World.add(world, this.body);
+    this.Visibility=0
   }
   display(){
 
@@ -18,9 +20,13 @@ class Box {
     translate(pos.x,pos.y)
     rotate(angle);
     rectMode(CENTER);
-    fill("black");
     rect(0, 0, this.width, this.height);
     pop();
-    
-  }
+
+    //if(this.body.speed<3){
+
+   //World.remove(world,this.body);
+    //tint(0, 153, 204);
+  //}
+}
 };
