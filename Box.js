@@ -1,7 +1,6 @@
 class Box {
   constructor(x,y,width,height) {
     var options = {
-        isStatic: false,
         restituition:0.4,
         friction:0.1
     }
@@ -9,7 +8,7 @@ class Box {
     this.width = width;
     this.height = height;
     World.add(world, this.body);
-    this.Visibility=0
+    //this.Visibility=0
   }
   display(){
 

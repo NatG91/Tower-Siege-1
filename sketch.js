@@ -150,14 +150,12 @@ fill(128,128,128);
   // Box36.display();
   // Box37.display();
 
-
-  slingshot.display();
-
   fill(184,66,66)
   stand1.display();
 
   stand2.display();
-
+  
+slingshot.display();
 }
 
 
